@@ -30,7 +30,7 @@ public class BookServcie {
         oldBook.setCategoria(book.getCategoria());
         oldBook.setTitle(book.getTitle());
         oldBook.setDate_publication(book.getDate_publication());
-        oldBook.setQuantidade(book.getQuantidade());
+        oldBook.setQuantidadeDisponivel(book.getQuantidadeDisponivel());
 
         return repository.save(oldBook);
     }

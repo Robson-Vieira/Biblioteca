@@ -6,6 +6,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -19,6 +20,13 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private User usuario; // FK para usuário
+
+    @Column(nullable = false)
+    private String status; //transformar em um Enum
+
     @CreationTimestamp
     private Date date_loan;
 
@@ -27,4 +35,7 @@ public class Loan {
 
     @Column(nullable = false)
     private Date return_date;
+
+    @OneToMany(mappedBy = "loan", cascade = CascadeType.ALL)
+    private List<LoanItem> itens;
 }

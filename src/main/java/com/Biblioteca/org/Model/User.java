@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -40,5 +41,7 @@ public class User {
     @CreationTimestamp
     private Date date_register;
 
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    private List<Loan> loans;
 
 }

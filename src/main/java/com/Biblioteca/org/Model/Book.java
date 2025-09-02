@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -27,6 +28,14 @@ public class Book {
     private String categoria;
 
     @Column(nullable = false)
-    private int quantidade;
+    private int quantidadeDisponivel;
 
+    @ManyToMany
+    @JoinTable(name = "book_author",
+            joinColumns = @JoinColumn(name = "livro_id"),
+            inverseJoinColumns = @JoinColumn(name = "autor_id"))
+    private List<Author> autores;
+
+    @OneToMany(mappedBy = "book")
+    private List<LoanItem> item_emprestimo;
 }
