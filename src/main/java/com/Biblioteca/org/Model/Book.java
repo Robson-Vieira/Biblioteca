@@ -3,6 +3,7 @@ package com.Biblioteca.org.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -18,17 +19,14 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String title;
 
     @Column(nullable = false)
-    private Date date_publication;
+    private LocalDate date_publication;
 
     @Column(nullable = false)
-    private String categoria;
-
-    @Column(nullable = false)
-    private int quantidadeDisponivel;
+    private String category;
 
     @ManyToMany
     @JoinTable(name = "book_author",

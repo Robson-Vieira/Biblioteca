@@ -27,10 +27,9 @@ public class BookServcie {
 
     public Book updateBook(Long id,Book book){
         Book oldBook = repository.findById(id).orElseThrow();// Lançar uma excessao personalizada posteriormente;
-        oldBook.setCategoria(book.getCategoria());
+        oldBook.setCategory(book.getCategory());
         oldBook.setTitle(book.getTitle());
         oldBook.setDate_publication(book.getDate_publication());
-        oldBook.setQuantidadeDisponivel(book.getQuantidadeDisponivel());
 
         return repository.save(oldBook);
     }

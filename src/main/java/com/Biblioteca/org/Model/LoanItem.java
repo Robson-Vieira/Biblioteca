@@ -15,7 +15,6 @@ public class LoanItem {
 
     @ManyToOne
     @JoinColumn(name = "boook_id")
-    private Book livro; // FK para Book
+    private Book book; // FK para Book
 
-    private Integer quantidade;
 }
