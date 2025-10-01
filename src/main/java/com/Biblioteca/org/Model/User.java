@@ -32,10 +32,6 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING )
-    private Role role;
-
-    @Column(nullable = false)
     private Long fone;
 
     @CreationTimestamp

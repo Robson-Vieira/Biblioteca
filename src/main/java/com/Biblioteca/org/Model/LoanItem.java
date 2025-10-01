@@ -11,7 +11,7 @@ public class LoanItem {
 
     @ManyToOne
     @JoinColumn(name = "loan_id")
-    private Loan emprestimo; // FK para Loan
+    private Loan loan; // FK para Loan
 
     @ManyToOne
     @JoinColumn(name = "boook_id")

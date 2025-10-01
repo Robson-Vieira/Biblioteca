@@ -22,7 +22,7 @@ public class Loan {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private User usuario; // FK para usuário
+    private User users; // FK para usuário
 
     @Column(nullable = false)
     private String status; //transformar em um Enum

@@ -30,7 +30,6 @@ public class UserService {
         u.setName(user.getName());
         u.setCpf(user.getCpf());
         u.setFone(user.getFone());
-        u.setRole(user.getRole());
         u.setEmail(user.getEmail());
         u.setPassword(user.getPassword());
         u.setDate_register(user.getDate_register());

@@ -1,9 +1,6 @@
 package com.Biblioteca.org.Model.DTO;
 
 import com.Biblioteca.org.Model.Loan;
-import com.Biblioteca.org.Model.Role;
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 import java.util.List;
@@ -17,8 +14,6 @@ public class UserDTO {
     private Long cpf;
 
     private String password;
-
-    private Role role;
 
     private Long fone;
 
